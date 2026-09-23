@@ -5,8 +5,8 @@ through Virtual Machine Manager.
 
 | VM | Resources | Network interfaces | IPv4 configuration |
 |---|---:|---|---|
-| `gw` | 1 vCPU, 1 GiB RAM | WAN, LAN1, LAN2 | WAN: DHCP (libvirt default NAT); LAN1: `192.168.10.1/24`; LAN2: `192.168.20.1/24` |
-| `srv` | 2 vCPUs, 4 GiB RAM | LAN1 | `192.168.10.10/24`, gateway `192.168.10.1` |
+| `gw` | 2 vCPUs, 4 GiB RAM | WAN, LAN1, LAN2 | WAN: DHCP (libvirt default NAT); LAN1: `192.168.174.1/24`; LAN2: `192.168.228.1/24` |
+| `srv` | 2 vCPUs, 4 GiB RAM | LAN1 | `192.168.174.2/24`, gateway `192.168.174.1` |
 
 ```text
                        Internet
@@ -14,12 +14,12 @@ through Virtual Machine Manager.
               WAN: libvirt "default" (NAT/DHCP)
                           |
                     [ gw / Fedora ]
-                  1 vCPU, 1 GiB RAM
-          LAN1 192.168.10.1/24 | LAN2 192.168.20.1/24
+                  2 vCPUs, 4 GiB RAM
+          LAN1 192.168.174.1/24 | LAN2 192.168.228.1/24
                  |             |
         [ srv / Fedora ]       +-- isolated LAN2 (reserved for later hosts)
       2 vCPUs, 4 GiB RAM
-        192.168.10.10/24
+        192.168.174.2/24
 ```
 
 `LAN1` and `LAN2` are isolated libvirt networks with DHCP disabled. The WAN
