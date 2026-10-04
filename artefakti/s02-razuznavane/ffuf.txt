@@ -1,5 +1,0 @@
-[2K.htaccess               [Status: 403, Size: 199, Words: 14, Lines: 8, Duration: 1ms][0m
-[2K.hta                    [Status: 403, Size: 199, Words: 14, Lines: 8, Duration: 1ms][0m
-[2K.htpasswd               [Status: 403, Size: 199, Words: 14, Lines: 8, Duration: 2ms][0m
-[2Kcgi-bin/                [Status: 403, Size: 199, Words: 14, Lines: 8, Duration: 2ms][0m
-[2Kindex.html              [Status: 200, Size: 45, Words: 2, Lines: 2, Duration: 0ms][0m
