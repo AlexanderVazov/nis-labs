@@ -1,0 +1,75 @@
+{
+	"name": "S02 - Razuznavane",
+	"versions": {
+		"attack": "19",
+		"navigator": "5.3.2",
+		"layer": "4.5"
+	},
+	"domain": "enterprise-attack",
+	"description": "Active reconnaissance of the isolated lab server 192.168.174.2 from the reconnaissance VM. Nmap service detection identified open SSH on port 22 and Apache httpd 2.4.49 on port 8080. ffuf then performed web content discovery against the HTTP service using a common wordlist, identifying index.html and restricted paths including .hta, .htaccess, .htpasswd, and cgi-bin/.",
+	"filters": {
+		"platforms": [
+			"Windows",
+			"IaaS",
+			"Linux",
+			"macOS",
+			"SaaS",
+			"ESXi",
+			"Network Devices",
+			"PRE",
+			"Containers",
+			"Office Suite",
+			"Identity Provider"
+		]
+	},
+	"sorting": 0,
+	"layout": {
+		"layout": "side",
+		"aggregateFunction": "average",
+		"showID": false,
+		"showName": true,
+		"showAggregateScores": false,
+		"countUnscored": false,
+		"expandedSubtechniques": "none"
+	},
+	"hideDisabled": false,
+	"techniques": [
+		{
+			"techniqueID": "T1595",
+			"tactic": "reconnaissance",
+			"color": "",
+			"comment": "Executed nmap -sV 192.168.174.2.\nThe scan identified ports 22/tcp and 8080/tcp and detected Apache httpd 2.4.49.",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": true
+		},
+		{
+			"techniqueID": "T1595.003",
+			"tactic": "reconnaissance",
+			"color": "",
+			"comment": "Executed ffuf against http://192.168.174.2:8080/ using common.txt.\nDiscovered .hta, .htaccess, .htpasswd, cgi-bin/, and index.html.",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": false
+		}
+	],
+	"gradient": {
+		"colors": [
+			"#ff6666ff",
+			"#ffe766ff",
+			"#8ec843ff"
+		],
+		"minValue": 0,
+		"maxValue": 100
+	},
+	"legendItems": [],
+	"metadata": [],
+	"links": [],
+	"showTacticRowBackground": false,
+	"tacticRowBackground": "#dddddd",
+	"selectTechniquesAcrossTactics": true,
+	"selectSubtechniquesWithParent": false,
+	"selectVisibleTechniques": false
+}
