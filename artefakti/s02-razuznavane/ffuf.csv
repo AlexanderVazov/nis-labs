@@ -1,0 +1,6 @@
+FUZZ,url,redirectlocation,position,status_code,content_length,content_words,content_lines,content_type,duration,resultfile,Ffufhash
+.hta,http://192.168.174.2:8080/.hta,,24,403,199,14,8,text/html; charset=iso-8859-1,1.862379ms,,37ec518
+.htaccess,http://192.168.174.2:8080/.htaccess,,25,403,199,14,8,text/html; charset=iso-8859-1,2.115926ms,,37ec519
+.htpasswd,http://192.168.174.2:8080/.htpasswd,,26,403,199,14,8,text/html; charset=iso-8859-1,2.355126ms,,37ec51a
+cgi-bin/,http://192.168.174.2:8080/cgi-bin/,,1047,403,199,14,8,text/html; charset=iso-8859-1,4.51271ms,,37ec5417
+index.html,http://192.168.174.2:8080/index.html,,2210,200,45,2,2,text/html,1.463055ms,,37ec58a2
