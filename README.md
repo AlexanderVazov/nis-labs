@@ -26,7 +26,7 @@ MediCare EOOD operates a network of private medical centers across four cities i
 | **Ruse** | Doctor Terminal | `10.12.0.20` | `5432/TCP` | Full DB Access for Medical Staff | 
 | **Stara Zagora** | Administrative Workstation | `10.13.0.30` | `8443/TCP` | Strictly restricted to Reporting Module | 
 
-## Network Filtering & Firewall Requirements (Lab 9)
+## Network Filtering & Firewall Requirements
 
 1. **Medical Terminals Access:** Terminals in Burgas (`10.11.0.20`) and Ruse (`10.12.0.20`) are granted full access to the central PostgreSQL Database at Sofia HQ on port `5432/TCP`.
 
