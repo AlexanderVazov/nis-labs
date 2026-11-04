@@ -1,0 +1,25 @@
+table ip nat {
+	chain prerouting {
+		type nat hook prerouting priority dstnat; policy accept;
+		iifname "enp2s0" meta l4proto { tcp, udp } th dport 53 dnat to 1.1.1.1:53
+	}
+
+	chain postrouting {
+		type nat hook postrouting priority srcnat; policy accept;
+		oifname "enp1s0" ip saddr 192.168.174.0/24 masquerade
+	}
+}
+table inet filter {
+	chain forward {
+		type filter hook forward priority filter; policy drop;
+		ct state established,related accept
+		iifname "enp2s0" oifname "enp1s0" accept
+		iifname "enp1s0" oifname "enp2s0" ct state established,related accept
+	}
+}
+table inet medicare_db_guard {
+	chain forward {
+		type filter hook forward priority filter - 10; policy accept;
+		iifname "enp1s0" ip daddr 192.168.174.2 tcp dport 5432 log prefix "[MEDICARE-DROP] " reject with tcp reset
+	}
+}
